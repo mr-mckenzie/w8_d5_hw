@@ -1,8 +1,7 @@
 import styled from "styled-components"
+import {Link} from 'react-router-dom'
 
 const NavBar = ({basket}) => {
-
-    const basketTotal = basket.length
 
     const NavBar = styled.div`
     display: flex;
@@ -10,8 +9,8 @@ const NavBar = ({basket}) => {
 
     return (
         <NavBar>
-            <p>Home</p>
-            <p>Basket {(basketTotal) ? ({basketTotal}) : null}</p>
+            <Link to='/'>Home</Link>
+            <Link to='/basket'>Basket {(basket.length) ? <sup>({basket.length})</sup> : null}</Link>
         </NavBar>
     )
 }
